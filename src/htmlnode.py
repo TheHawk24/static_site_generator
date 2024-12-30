@@ -15,9 +15,9 @@ class HTMLNode:
         attributes = ""
         for prop in self.props:
             value = self.props[prop]
-            attributes += f'{prop}="{self.props[prop]}" '
+            attributes += f' {prop}="{self.props[prop]}" '
 
-        return attributes[:-1]
+        return attributes
 
     def __repr__(self):
         return f"{self.__class__.__name__}({self.tag}, {self.value}, {self.children}, {self.props})"
