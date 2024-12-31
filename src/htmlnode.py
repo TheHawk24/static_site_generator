@@ -37,6 +37,16 @@ class LeafNode(HTMLNode):
 
         return htmltag
 
+    def __eq__(self,node):
+        if self.tag != node.tag:
+            return False
+        if self.value != node.value:
+            return False
+        if self.props != node.props:
+            return False
+        return True
+
+
     def __repr__(self):
         return f"{self.__class__.__name__}({self.tag}, {self.value}, {self.props})"
 
@@ -54,7 +64,7 @@ class ParentNode(HTMLNode):
         return htmltag
 
     def __repr__(self):
-        return f"{self.__class__.__name__}({self.tag}, {self.value}, {self.props})"
+        return f"{self.__class__.__name__}({self.tag}, {self.children},{self.props})"
 
 
 
