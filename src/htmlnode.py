@@ -63,6 +63,17 @@ class ParentNode(HTMLNode):
         htmltag = f"<{self.tag}{self.props_to_html()}>{"".join(list(map(lambda x: x.to_html(),self.children)))}</{self.tag}>"
         return htmltag
 
+    
+    def __eq__(self,node):
+        if self.tag != node.tag:
+            return False
+        if self.children != node.children:
+            return False
+        if self.props != node.props:
+            return False
+        return True
+
+
     def __repr__(self):
         return f"{self.__class__.__name__}({self.tag}, {self.children},{self.props})"
 

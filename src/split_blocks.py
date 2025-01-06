@@ -12,7 +12,8 @@ def block_to_block_type(markdown_block):
             if markdown_block[i] == "#":
                 continue
             elif markdown_block[i] == " ":
-                return "heading"
+                #return "heading"
+                return f"heading {i}"
             else:
                 break
     
