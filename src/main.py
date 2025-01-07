@@ -1,10 +1,8 @@
-from textnode import TextNode, TextType
+from copydir import copy_to
 
 def main():
 
-    textnode = TextNode("This is a text node", TextType.BOLD_TEXT, "https://www.boot.dev")
-    print(textnode)
-
+    copy_to('./static/', './public/')
 
 if __name__ == "__main__":
     main()
