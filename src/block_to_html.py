@@ -28,7 +28,10 @@ def markdown_to_html_node(markdown):
             block_list = block.split("\n")
             leafnodes = []
             for block in block_list:
-                textnodes = text_to_textnodes(block[1:])
+                if block_list.index(block) == 0:
+                    textnodes = text_to_textnodes(block[2:])
+                else:
+                    textnodes = text_to_textnodes(block[1:])
                 for node in textnodes:
                     leafnodes.append(text_node_to_html(node))
             htmlnodes.append(ParentNode("blockquote", leafnodes))

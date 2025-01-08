@@ -38,8 +38,6 @@ def create_directories(directory):
 
 
 
-
-
 def copy_to(source, destination):
     exists = os.path.exists(destination)
     if not exists:

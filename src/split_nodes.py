@@ -16,7 +16,7 @@ def split_nodes_delimiter(old_nodes, delimeter, text_type):
             if delimeter in extracted_first_part:
                 extracted_second_part = extracted_first_part[:extracted_first_part.index(delimeter)]
                 new_nodes.append(TextNode(extracted_second_part,text_type))
-                last_part = extracted_first_part.replace(extracted_second_part+delimeter, "")
+                last_part = extracted_first_part.replace(extracted_second_part+delimeter, "", 1)
                 if len(last_part) != 0:
                     recurse = TextNode(last_part, node.text_type)
                     new_nodes.extend(split_nodes_delimiter([recurse], delimeter, text_type))
