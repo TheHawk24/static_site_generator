@@ -18,6 +18,8 @@ class TextNode():
         self.url = url
 
     def __eq__(self,node):
+        if not isinstance(node, TextNode):
+            return False
         if self.text != node.text:
             return False
         if self.text_type != node.text_type:

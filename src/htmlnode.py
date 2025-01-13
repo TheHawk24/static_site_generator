@@ -38,6 +38,8 @@ class LeafNode(HTMLNode):
         return htmltag
 
     def __eq__(self,node):
+        if not isinstance(node, LeafNode):
+            return False
         if self.tag != node.tag:
             return False
         if self.value != node.value:
@@ -65,6 +67,8 @@ class ParentNode(HTMLNode):
 
     
     def __eq__(self,node):
+        if not isinstance(node, ParentNode):
+            return False
         if self.tag != node.tag:
             return False
         if self.children != node.children:

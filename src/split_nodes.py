@@ -13,7 +13,7 @@ def split_nodes_delimiter(old_nodes, delimeter, text_type):
             if len(node.text) != 0:
                 new_nodes.append(node)
             extracted_first_part = text[text.index(delimeter)+len(delimeter):] # Remove the opening delimiter
-            if delimeter in extracted_first_part:
+            if delimeter in extracted_first_part: # if second delimiter is found slice up to the second delimiter
                 extracted_second_part = extracted_first_part[:extracted_first_part.index(delimeter)]
                 new_nodes.append(TextNode(extracted_second_part,text_type))
                 last_part = extracted_first_part.replace(extracted_second_part+delimeter, "", 1)
